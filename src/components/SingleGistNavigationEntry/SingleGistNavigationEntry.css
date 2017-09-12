@@ -1,0 +1,8 @@
+.gistNavigationItem {
+    height: 50px;
+    border-bottom: 1px solid #dedede;
+
+    overflow-x: hidden;
+
+    padding: 15px
+}
