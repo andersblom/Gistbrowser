@@ -13,3 +13,7 @@ nav {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+.mainContainer {
+  padding: 3em;
+}

@@ -21,15 +21,12 @@ export default class App extends Component {
       this.setState({
         allGists: res.data
       })
-      console.log(res.data);
     })
     .catch(err => {
       console.error(err);
     });
   }
-  componentWillMount() {
-    console.log("mounted App");
-  }
+
   render() {
     const gistNavigationEntries = this.state.allGists.map((gist, index) => {
       return (<Link to={gist.id} key={gist.id}><SingleGistNavigationEntry gistInformation={gist} /></Link>);
@@ -41,7 +38,7 @@ export default class App extends Component {
             { gistNavigationEntries }
           </nav>
 
-          <section>
+          <section className="mainContainer">
             <Route exact path="/" component={NoGistsToShow} />
             <Route path="/:id" component={SingleGistShow} />
           </section>
