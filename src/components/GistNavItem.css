@@ -1,0 +1,10 @@
+.GistNavItemInstance {
+    height: 60px;
+    border-bottom: 1px solid #dedede;
+
+    padding: 1em;
+}
+
+.selected {
+    background-color: #999;
+}
