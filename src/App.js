@@ -13,7 +13,8 @@ export default class App extends Component {
     super();
 
     this.state = {
-      allGists: []
+      allGists: [],
+      activeGist: {}
     }
 
     axios.get("https://api.github.com/gists/public?per_page=30")
@@ -27,9 +28,25 @@ export default class App extends Component {
     });
   }
 
+  handleGistNavItemClick(id) {
+    axios.get(`https://api.github.com/gists/${id}`)
+    .then(res => {
+        this.setState({
+            activeGist: res.data
+        });
+    })
+    .catch(err => {
+        console.error(err);
+    });
+  }
+
+  componentDidMount(){
+    console.log(this);
+  }
+
   render() {
     const gistNavigationEntries = this.state.allGists.map((gist, index) => {
-      return (<Link to={gist.id} key={gist.id}><SingleGistNavigationEntry gistInformation={gist} /></Link>);
+      return (<Link to={gist.id} key={gist.id} onClick={() => {this.handleGistNavItemClick(gist.id)}}><SingleGistNavigationEntry gistInformation={gist} /></Link>);
     });
     return (
       <Router>
@@ -40,7 +57,7 @@ export default class App extends Component {
 
           <section className="mainContainer">
             <Route exact path="/" component={NoGistsToShow} />
-            <Route path="/:id" component={SingleGistShow} />
+            <Route path="/:id" render={() => (<SingleGistShow activeGist={this.state.activeGist}/>)} />
           </section>
         </div>
       </Router>
