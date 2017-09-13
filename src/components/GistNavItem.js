@@ -11,10 +11,10 @@ export default class GistNavItem extends Component {
         }
     }
 
-    render() {
-    return (
-        <div className={"GistNavItemInstance " + (this.state.selected ? "selected" : "")}>{this.props.gistData.description}</div>
-    );
-  }
+    render() {        
+        return (
+            <div className={"GistNavItemInstance " + (this.state.selected ? "selected" : "")}>{this.props.gistData.description}</div>
+        );
+    }
 }
           
