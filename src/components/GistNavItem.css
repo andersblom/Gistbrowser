@@ -1,10 +1,26 @@
 .GistNavItemInstance {
     height: 60px;
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #BDBDD7;
 
-    padding: 1em;
+    color: #46466E;
+    font-family: "Monserrat", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+
+    padding: 0.6em 2em 0.6em 2em;
 }
 
 .selected {
     background-color: #999;
+}
+
+.hover {
+    background-color: #8787A3;
+    color: #ffffff;
+    border-bottom-color: #8787A3;
 }

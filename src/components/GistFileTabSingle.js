@@ -26,8 +26,8 @@ export default class GistFileTabSingle extends Component {
 
 const styles = {
     gistFileTabSingle: {
-        backgroundColor: "#ffffff",
-        borderBottom: "4px solid #dedede",
+        backgroundColor: "#f9f9f9",
+        borderBottom: "4px solid #BDBDD7",
         display: "inline-block",
         padding: "10px 15px 10px 15px",
         cursor: "pointer",

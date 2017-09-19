@@ -65,7 +65,7 @@ export default class GistDisplay extends Component {
         } else {
             return (
                 <div>
-                    <h1 className="gistDesc">Gist: {this.props.selectedGist.description}</h1>
+                    <h1 style={styles.gistDescHeader}>Gist: {this.props.selectedGist.description}</h1>
                     <div className="gistFiles">
                         <GistFileTabs updateTheCurrentFileToDisplay={this.updateTheCurrentFileToDisplay} files={this.props.selectedGist.files} {...this.props} />
                     </div>
@@ -77,3 +77,10 @@ export default class GistDisplay extends Component {
     }
 }
           
+const styles = {
+    gistDescHeader: {
+        fontSize: "18px",
+        marginTop: "0px", 
+        marginBottom: "1em",
+    }
+}
