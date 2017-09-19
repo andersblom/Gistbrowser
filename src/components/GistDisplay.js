@@ -24,7 +24,7 @@ export default class GistDisplay extends Component {
                         <GistFileTabs files={this.props.selectedGist.files} {...this.props} />
                     </div>
 
-                    <Route path={`${this.props.match.url}/:gistFileNumber`} render={() => (<GistFileViewer {...this.props} />)} />
+                    <Route path={`${this.props.match.url}/:gistFileNumber`} render={(props) => (<GistFileViewer {...props} files={this.props.selectedGist.files} />)} />
                 </div>
             );
         }
