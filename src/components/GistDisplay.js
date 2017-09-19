@@ -36,9 +36,7 @@ export default class GistDisplay extends Component {
         let renderThis = gistFileArray.map((file, index) => {
             if (index === tabIndex) {
                 return file;
-            } else {
-                return false;
-            }
+            } 
         });
 
         renderThis = renderThis[0];
