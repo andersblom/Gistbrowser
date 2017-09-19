@@ -21,7 +21,7 @@ export default class GistFileTabSingle extends Component {
     
     render() {
         return(
-            <Link to={`${this.props.match.url}/${this.props.index}`}><div style={(this.state.hover ? {...styles.gistFileTabSingle, ...styles.gistFileTabSingleHover} : styles.gistFileTabSingle)} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>{this.props.file.filename}</div></Link>
+            <Link to={`${this.props.match.url}/${this.props.index}`} onClick={() => {this.props.updateTheCurrentFileToDisplay(this.props.index)}}><div style={(this.state.hover ? {...styles.gistFileTabSingle, ...styles.gistFileTabSingleHover} : styles.gistFileTabSingle)} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>{this.props.file.filename}</div></Link>
         )
     }
 }

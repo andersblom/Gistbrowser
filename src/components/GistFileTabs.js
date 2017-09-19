@@ -10,9 +10,8 @@ export default class GistFileTabs extends Component {
         _.forEach(this.props.files, (file) => {
             gistFileArray.unshift(file);
         });
-        const gistFileTabs = gistFileArray.map((file,index) => {
-            console.log(index, file);
-            return(<GistFileTabSingle key={index} index={index} file={file} {...this.props} />);
+        const gistFileTabs = gistFileArray.map((file, index) => {
+            return(<GistFileTabSingle updateTheCurrentFileToDisplay={this.props.updateTheCurrentFileToDisplay} key={index} index={index} file={file} {...this.props} />);
         })
         return(
             <div>
