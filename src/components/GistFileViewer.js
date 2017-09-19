@@ -19,7 +19,8 @@ const styles = {
     },
 
     preForHtml: {
-        whiteSpace: "pre-wrap"
-        
+        whiteSpace: "pre-wrap",
+        backgroundColor: "#dedede",
+        padding: "20px 10px 20px 10px"
     }
 }

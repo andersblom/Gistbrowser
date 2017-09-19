@@ -10,7 +10,7 @@ export default class GistDisplay extends Component {
     constructor() {
         super();
         this.state = {
-            allFileContents: "",
+            allFileContents: "Loading file..",
             fileThatIsBeingRendered: {}
         }
 
