@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-import _ from 'lodash';
 
 export default class GistFileTabSingle extends Component {
     constructor() {
@@ -29,13 +27,17 @@ export default class GistFileTabSingle extends Component {
 const styles = {
     gistFileTabSingle: {
         backgroundColor: "#ffffff",
-        borderBottom: "2px solid #dedede",
+        borderBottom: "4px solid #dedede",
         display: "inline-block",
         padding: "10px 15px 10px 15px",
         cursor: "pointer",
-        marginRight: "4px"
+        marginRight: "4px",
+        color: "#46466E",
+        fontFamily: "Montserrat, sans-serif",
+        textTransform: "uppercase",
+        fontSize: "11px",
     },
     gistFileTabSingleHover: {
-        borderBottom: "2px solid red",
+        borderBottom: "4px solid #46466E",
     }
 }

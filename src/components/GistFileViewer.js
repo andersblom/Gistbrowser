@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
-import axios from 'axios';
 
 export default class GistFileViewer extends Component {
     render() {
@@ -15,12 +13,16 @@ export default class GistFileViewer extends Component {
 
 const styles = {
     gistFileContentsContainer: {
-        width: "100%"
+        maxWidth: "100%",
+        backgroundColor: "#BDBDD7",
+        color: "#46466E",
+        padding: "2em",
     },
 
     preForHtml: {
         whiteSpace: "pre-wrap",
-        backgroundColor: "#dedede",
-        padding: "20px 10px 20px 10px"
+        wordBreak: "break-word",
+        fontFamily: "Source Code Pro, Monospace",
+        fontSize: "12px"
     }
 }

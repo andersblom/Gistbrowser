@@ -34,8 +34,10 @@ export default class GistDisplay extends Component {
         // Cycling through files to make sure that the index no of the  
         // files array + url prop matches.
         let renderThis = gistFileArray.map((file, index) => {
-            if (index == tabIndex) {
+            if (index === tabIndex) {
                 return file;
+            } else {
+                return false;
             }
         });
 
@@ -63,7 +65,7 @@ export default class GistDisplay extends Component {
         } else {
             return (
                 <div>
-                    <div className="gistDesc">{this.props.selectedGist.description}</div>
+                    <h1 className="gistDesc">Gist: {this.props.selectedGist.description}</h1>
                     <div className="gistFiles">
                         <GistFileTabs updateTheCurrentFileToDisplay={this.updateTheCurrentFileToDisplay} files={this.props.selectedGist.files} {...this.props} />
                     </div>
