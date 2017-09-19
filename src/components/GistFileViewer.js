@@ -26,13 +26,21 @@ export default class GistFileViewer extends Component {
     render() {
         return(
             <div style={styles.gistFileContentsContainer}>
-                <div>{this.props.fileThatIsBeingRendered.filename}, {this.props.fileThatIsBeingRendered.language}</div>
-                <div style={styles.toggleCodeOnOffBtn} onClick={this.toggleCodeOnOff}>{(this.state.showCode ? "markup" : "code")}</div>
+                {(this.state.showCode ? 
+                    <div>
+                        <div style={styles.languageShower}>Language: {this.props.fileThatIsBeingRendered.language}</div>
+                        <div style={styles.sizeShower}>Size: {this.props.fileThatIsBeingRendered.size}</div>
+                        <div style={styles.infoSeperator}></div>
+                    </div>
+                    :
+                    ""
+                )}
                 {(this.state.showCode ? 
                     <pre style={styles.preForHtml}>{this.props.allFileContents}</pre> 
                     : 
                     <div style={styles.markUpDisplay} dangerouslySetInnerHTML={this.getMarkup()}></div>
-                )}    
+                )}
+                <div style={styles.toggleCodeOnOffBtn} onClick={this.toggleCodeOnOff}>{(this.state.showCode ? "markup" : "code")}</div>    
             </div>
         );
     }
@@ -41,33 +49,56 @@ export default class GistFileViewer extends Component {
 const styles = {
     gistFileContentsContainer: {
         maxWidth: "100%",
-        backgroundColor: "#f9f9f9",
+        // backgroundColor: "#f9f9f9",
+        border: "1px solid #f9f9f9",
         color: "#46466E",
         padding: "2em",
-        position: "relative",
     },
 
     preForHtml: {
         whiteSpace: "pre-wrap",
         wordBreak: "break-word",
         fontFamily: "Source Code Pro, Monospace",
-        fontSize: "12px"
+        fontSize: "12px",
+        backgroundColor: "#f5f5f5",
+        padding: "2em",
+        position: "relative",
     },
     toggleCodeOnOffBtn: {
         backgroundColor: "#46466E",
         color: "#ffffff",
-        width: "60px",
+        width: "80px",
         position: "absolute",
         right: "0px",
         top: "0px",
         cursor: "pointer",
         textAlign: "center",
         textTransform: "uppercase",
-        fontSize: "11px",
-        paddingTop: "6px",
-        paddingBottom: "6px",
+        fontSize: "12px",
+        paddingTop: "8px",
+        paddingBottom: "8px",
     },
     markUpDisplay: {
         overflowX: "scroll",
+    },
+    languageShower: {
+        color: "#8787A3",
+        textTransform: "uppercase",
+        fontSize: "13px",
+        fontWeight: "600",
+        marginBottom: "0.6em",
+    },
+    sizeShower: {
+        color: "#8787A3",
+        textTransform: "uppercase",
+        fontSize: "12px",
+        fontWeight: "400",
+        marginBottom: "1.6em",
+    },
+    infoSeperator: {
+        height: "1px", 
+        width: "100%",
+        backgroundColor: "#BDBDD7",
+        marginBottom: "1em",
     }
 }

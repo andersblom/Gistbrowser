@@ -65,7 +65,7 @@ export default class GistDisplay extends Component {
         } else {
             return (
                 <div>
-                    <h1 style={styles.gistDescHeader}>Gist: {this.props.selectedGist.description}</h1>
+                    <h1 style={styles.gistDescHeader}>{this.props.selectedGist.description}</h1>
                     <div className="gistFiles">
                         <GistFileTabs updateTheCurrentFileToDisplay={this.updateTheCurrentFileToDisplay} files={this.props.selectedGist.files} {...this.props} />
                     </div>
@@ -82,5 +82,7 @@ const styles = {
         fontSize: "18px",
         marginTop: "0px", 
         marginBottom: "1em",
+        fontWeight: "400",
+        color: "#8787A3",
     }
 }
